@@ -1,6 +1,6 @@
 import React from 'react';
-import { API_URL } from '../app/(home)/page';
 import styles from '../styles/movie-info.module.css';
+import { API_URL } from '../app/constants';
 
 export const getMovie = async (id: string) => {
     console.log(`fetching movies : ${Date.now()}`);
