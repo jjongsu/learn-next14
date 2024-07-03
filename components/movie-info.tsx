@@ -2,9 +2,9 @@ import React from 'react';
 import { API_URL } from '../app/(home)/page';
 import styles from '../styles/movie-info.module.css';
 
-const getMovie = async (id: string) => {
+export const getMovie = async (id: string) => {
     console.log(`fetching movies : ${Date.now()}`);
-    await new Promise(res => setTimeout(res, 2000));
+    // await new Promise(res => setTimeout(res, 2000));
     const response = await fetch(`${API_URL}/${id}`);
     return response.json();
 };

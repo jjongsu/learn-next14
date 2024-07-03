@@ -1,12 +1,24 @@
 import { Metadata } from 'next';
-import MovieInfo from '../../../../components/movie-info';
+import MovieInfo, { getMovie } from '../../../../components/movie-info';
 import MovieVideos from '../../../../components/movie-videos';
 import { Suspense } from 'react';
 // import { API_URL } from '../../../(home)/page';
 
-export const metadata: Metadata = {
-    title: 'movie'
+interface IParams {
+    params: { id: string };
+}
+
+export const generateMetadata = async ({ params: { id } }: IParams): Promise<Metadata> => {
+    const movie = await getMovie(id);
+
+    return {
+        title: movie.title
+    };
 };
+
+// export const metadata: Metadata = {
+//     title: 'movie'
+// };
 
 // const getMovie = async (id: string) => {
 //     console.log(`fetching movies : ${Date.now()}`);
@@ -22,7 +34,7 @@ export const metadata: Metadata = {
 //     return response.json();
 // };
 
-export default async function MovieDetail({ params: { id } }: { params: { id: string } }) {
+export default async function MovieDetailPage({ params: { id } }: IParams) {
     /** 순차적으로 data fetching */
     // const movie = await getMovie(id);
     // const videos = await getVideos(id);
