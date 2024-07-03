@@ -1,3 +1,3 @@
 export default function Company() {
-    return <div>page</div>;
+    return <h1>Company</h1>;
 }
