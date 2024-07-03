@@ -32,7 +32,7 @@ export default async function MovieDetail({ params: { id } }: { params: { id: st
 
     return (
         <div>
-            <h1>movies detail page</h1>
+            {/* <h1>movies detail page</h1> */}
             {/* <h2>{movie.title}</h2>
             {videos.map(el => (
                 <h3 key={el.id}>{el.name}</h3>
