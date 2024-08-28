@@ -6,9 +6,12 @@ export const metadata: Metadata = {
     // title: 'Home | Next Movies',
     title: {
         template: '%s | Next Movies',
-        default: 'Loading...'
+        default: 'Loading...',
     },
-    description: 'The best movies on the best framework'
+    description: 'The best movies on the best framework',
+    verification: {
+        google: 'T5bLhVUk64v3rAdyVRV0PdZJ6WZV9fWYwSqHN0HJIuE',
+    },
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
