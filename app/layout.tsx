@@ -2,6 +2,7 @@ import '../styles/global.css';
 import { Metadata } from 'next';
 import Navigation from '../components/navigation';
 import Script from 'next/script';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 export const metadata: Metadata = {
     // title: 'Home | Next Movies',
@@ -35,6 +36,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <Navigation />
                 {children}
             </body>
+            <GoogleAnalytics gaId='G-6WTDZTFWG8' />
         </html>
     );
 }
